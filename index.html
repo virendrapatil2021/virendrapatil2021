@@ -3,18 +3,13 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>MathMagic Kids — Home 🧮</title>
+<title>MathMagic Kids — Chapters 🧮</title>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
 <style>
   :root {
-    --purple: #6C5CE7;
-    --pink:   #FD79A8;
-    --teal:   #00CEC9;
-    --orange: #FDCB6E;
-    --green:  #00B894;
-    --red:    #FF6B6B;
-    --blue:   #74B9FF;
-    --dark:   #2D3436;
+    --purple: #6C5CE7; --pink: #FD79A8; --teal: #00CEC9;
+    --orange: #FDCB6E; --green: #00B894; --red: #FF6B6B;
+    --blue: #74B9FF;   --dark: #2D3436;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -50,76 +45,12 @@
   }
 
   /* ── wrapper ── */
-  .wrapper { position: relative; z-index: 2; min-height: 100vh; display: flex; flex-direction: column; }
-
-  /* ── hero ── */
-  .hero {
-    text-align: center;
-    padding: clamp(40px, 8vw, 80px) 20px clamp(20px, 4vw, 40px);
-    position: relative;
-  }
-  .hero-icon {
-    font-size: clamp(60px, 12vw, 100px);
-    display: block;
-    animation: bounce 2s ease-in-out infinite;
-    filter: drop-shadow(0 0 30px #FDCB6E88);
-  }
-  @keyframes bounce {
-    0%,100% { transform: translateY(0); }
-    50%      { transform: translateY(-14px); }
-  }
-  .hero-title {
-    font-family: 'Fredoka One', cursive;
-    font-size: clamp(36px, 8vw, 80px);
-    background: linear-gradient(135deg, #FDCB6E, #FD79A8, #A29BFE, #74B9FF);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    line-height: 1.1;
-    margin: 10px 0 6px;
-    filter: drop-shadow(0 0 40px #FD79A844);
-  }
-  .hero-sub {
-    font-size: clamp(14px, 2.5vw, 20px);
-    color: rgba(255,255,255,.65);
-    font-weight: 700;
-    letter-spacing: .5px;
-    margin-bottom: 30px;
-  }
-
-  /* ── stats row ── */
-  .stats {
-    display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;
-    margin-bottom: 30px;
-  }
-  .stat-pill {
-    background: rgba(255,255,255,.08);
-    border: 1.5px solid rgba(255,255,255,.15);
-    backdrop-filter: blur(10px);
-    border-radius: 30px; padding: 8px 18px;
-    font-size: 13px; font-weight: 800; color: rgba(255,255,255,.8);
-    display: flex; align-items: center; gap: 6px;
-  }
-
-  /* ── BIG launch button ── */
-  .launch-wrap { display: flex; justify-content: center; margin-bottom: 50px; }
-  .launch-btn {
-    display: inline-flex; align-items: center; gap: 12px;
-    background: linear-gradient(135deg, #FDCB6E, #e17055);
-    color: #fff; text-decoration: none;
-    font-family: 'Fredoka One', cursive;
-    font-size: clamp(18px, 3vw, 26px);
-    padding: clamp(14px, 2.5vw, 20px) clamp(30px, 5vw, 56px);
-    border-radius: 50px;
-    box-shadow: 0 8px 40px #FDCB6E55, 0 0 0 0 #FDCB6E;
-    animation: pulse-btn 2.5s ease-in-out infinite;
-    transition: transform .2s;
-  }
-  .launch-btn:hover { transform: scale(1.05); }
-  .launch-btn:active { transform: scale(.97); }
-  @keyframes pulse-btn {
-    0%,100% { box-shadow: 0 8px 40px #FDCB6E55, 0 0 0 0 #FDCB6E44; }
-    50%      { box-shadow: 0 8px 40px #FDCB6E88, 0 0 0 14px transparent; }
+  .wrapper {
+    position: relative; z-index: 2;
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    justify-content: center;
+    padding: 40px 16px 50px;
   }
 
   /* ── section heading ── */
@@ -130,10 +61,13 @@
     margin-bottom: 20px;
     color: #fff;
   }
-  .section-heading span { opacity: .5; font-size: .7em; display: block; font-family: 'Nunito', sans-serif; font-weight: 700; margin-top: 4px; }
+  .section-heading span {
+    opacity: .5; font-size: .7em; display: block;
+    font-family: 'Nunito', sans-serif; font-weight: 700; margin-top: 4px;
+  }
 
   /* ── chapter grid ── */
-  .grid-section { padding: 0 16px 50px; max-width: 780px; margin: 0 auto; width: 100%; }
+  .grid-section { max-width: 780px; margin: 0 auto; width: 100%; }
 
   .chapter-grid {
     display: grid;
@@ -170,47 +104,13 @@
     color: var(--card-color, #FDCB6E);
     line-height: 1.2;
   }
-  .ch-desc {
-    font-size: 11px; color: rgba(255,255,255,.5);
-    font-weight: 700; line-height: 1.4;
-  }
+  .ch-desc { font-size: 11px; color: rgba(255,255,255,.5); font-weight: 700; line-height: 1.4; }
   .ch-badge {
     font-size: 10px; font-weight: 900;
     background: var(--card-color, #FDCB6E);
     color: #fff; border-radius: 20px;
     padding: 3px 10px; margin-top: 2px;
   }
-
-  /* ── how it works ── */
-  .how-section { padding: 0 16px 50px; max-width: 780px; margin: 0 auto; width: 100%; }
-  .how-grid { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
-  .how-card {
-    flex: 1; min-width: 140px; max-width: 200px;
-    background: rgba(255,255,255,.06);
-    border: 1.5px solid rgba(255,255,255,.1);
-    border-radius: 20px; padding: 20px 14px;
-    text-align: center; animation: fadeUp .5s ease both;
-  }
-  .how-num {
-    width: 38px; height: 38px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Fredoka One', cursive; font-size: 18px;
-    margin: 0 auto 10px; color: #fff;
-  }
-  .how-title { font-weight: 900; font-size: 14px; margin-bottom: 4px; }
-  .how-desc  { font-size: 11px; color: rgba(255,255,255,.5); font-weight: 700; line-height: 1.5; }
-
-  /* ── footer ── */
-  footer {
-    margin-top: auto;
-    text-align: center;
-    padding: 24px 20px;
-    font-size: 13px;
-    color: rgba(255,255,255,.3);
-    font-weight: 700;
-    border-top: 1px solid rgba(255,255,255,.07);
-  }
-  footer strong { color: rgba(255,255,255,.6); }
 
   @media(max-width:480px) {
     .chapter-grid { grid-template-columns: repeat(2, 1fr); }
@@ -219,10 +119,8 @@
 </head>
 <body>
 
-<!-- Starfield -->
 <div class="stars-bg" id="starsBg"></div>
 
-<!-- Floating math symbols -->
 <div class="floats">
   <span style="top:5%;left:4%;animation-delay:0s">➕</span>
   <span style="top:10%;left:18%;animation-delay:1.2s">✖️</span>
@@ -239,28 +137,6 @@
 </div>
 
 <div class="wrapper">
-
-  <!-- ── HERO ── -->
-  <section class="hero">
-    <span class="hero-icon">🧮</span>
-    <h1 class="hero-title">MathMagic Kids</h1>
-    <p class="hero-sub">Your Fun Formula Book — Learn Maths the Easy Way! ✨</p>
-
-    <div class="stats">
-      <div class="stat-pill">📚 9 Chapters</div>
-      <div class="stat-pill">🎮 36 Quiz Questions</div>
-      <div class="stat-pill">💡 Fun Tips & Tricks</div>
-      <div class="stat-pill">📸 Your Own Notes</div>
-    </div>
-
-    <div class="launch-wrap">
-      <a class="launch-btn" href="mathmagic-kids.html">
-        🚀 Open the App!
-      </a>
-    </div>
-  </section>
-
-  <!-- ── CHAPTER LINKS ── -->
   <section class="grid-section">
     <h2 class="section-heading">
       📖 All Chapters
@@ -334,53 +210,15 @@
 
     </div>
   </section>
-
-  <!-- ── HOW IT WORKS ── -->
-  <section class="how-section">
-    <h2 class="section-heading">
-      🎮 How It Works
-      <span>Simple 3-step learning for every chapter</span>
-    </h2>
-    <div class="how-grid">
-      <div class="how-card" style="animation-delay:.1s">
-        <div class="how-num" style="background:linear-gradient(135deg,#6C5CE7,#A29BFE)">1</div>
-        <div class="how-title">📖 Learn</div>
-        <div class="how-desc">Read colour-coded formula cards with fun tips &amp; examples</div>
-      </div>
-      <div class="how-card" style="animation-delay:.2s">
-        <div class="how-num" style="background:linear-gradient(135deg,#FD79A8,#e17055)">2</div>
-        <div class="how-title">💡 Understand</div>
-        <div class="how-desc">Use memory tricks, emoji stories &amp; visual sign charts</div>
-      </div>
-      <div class="how-card" style="animation-delay:.3s">
-        <div class="how-num" style="background:linear-gradient(135deg,#00B894,#00CEC9)">3</div>
-        <div class="how-title">🎮 Quiz</div>
-        <div class="how-desc">Test yourself with 4 questions per chapter &amp; earn points!</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── FOOTER ── -->
-  <footer>
-    Made with ❤️ for kids who love maths · <strong>MathMagic Kids</strong> · All chapters in one place 🧮
-  </footer>
-
 </div>
 
 <script>
-  // Generate random starfield
   const bg = document.getElementById('starsBg');
   for (let i = 0; i < 120; i++) {
     const s = document.createElement('div');
     s.className = 'star';
     const size = Math.random() * 2.5 + .5;
-    s.style.cssText = `
-      width:${size}px; height:${size}px;
-      top:${Math.random()*100}%;
-      left:${Math.random()*100}%;
-      animation-delay:${Math.random()*4}s;
-      animation-duration:${2+Math.random()*3}s;
-    `;
+    s.style.cssText = `width:${size}px;height:${size}px;top:${Math.random()*100}%;left:${Math.random()*100}%;animation-delay:${Math.random()*4}s;animation-duration:${2+Math.random()*3}s;`;
     bg.appendChild(s);
   }
 </script>
